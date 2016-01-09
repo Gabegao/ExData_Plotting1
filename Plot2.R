@@ -13,6 +13,5 @@ temp<- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
 
 ## create plot to be saved in a PNG file.
 png(filename = "Plot2.png")
-plot(temp, data$Global_active_power, pch=NA_integer_, col="black", xlab="", ylab="Global Active Power (kilowatts)")
-lines(temp, data$Global_active_power)
+plot(temp, data$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()

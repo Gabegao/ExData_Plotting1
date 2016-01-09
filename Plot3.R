@@ -13,8 +13,7 @@ temp<- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
 
 ## create plot to be saved in a PNG file.
 png(filename = "Plot3.png")
-plot(temp, data$Sub_metering_1, pch=NA_integer_, col="black", xlab="", ylab="Energy sub metering")
-lines(temp, data$Sub_metering_1, col="black")
+plot(temp, data$Sub_metering_1, type="l", col="black", xlab="", ylab="Energy sub metering")
 lines(temp, data$Sub_metering_2, col="red")
 lines(temp, data$Sub_metering_3, col="blue")
 legend("topright", lty=c(1,1,1), col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))

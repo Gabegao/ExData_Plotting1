@@ -17,22 +17,17 @@ png(filename = "Plot4.png")
 par(mfrow=c(2,2))
 
 ## the first plot in the top left corner
-plot(temp, data$Global_active_power, pch=NA_integer_, col="black", xlab="", ylab="Global active power")
-lines(temp, data$Global_active_power)
+plot(temp, data$Global_active_power, type="l", col="black", xlab="", ylab="Global active power")
 
 ## the second plot in the top right corner
-plot(temp, data$Voltage, pch=NA_integer_, col="black", xlab="datetime", ylab="Voltage")
-lines(temp, data$Voltage)
+plot(temp, data$Voltage, type="l", col="black", xlab="datetime", ylab="Voltage")
 
 ## the thrid plot in the bottom left corner
-plot(temp, data$Sub_metering_1, pch=NA_integer_, col="black", xlab="", ylab="Energy sub metering")
-lines(temp, data$Sub_metering_1, col="black")
+plot(temp, data$Sub_metering_1, type="l", col="black", xlab="", ylab="Energy sub metering")
 lines(temp, data$Sub_metering_2, col="red")
 lines(temp, data$Sub_metering_3, col="blue")
 legend("topright", lty=c(1,1,1), col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 ## the fourth plot in the bottom right corner
-plot(temp, data$Global_reactive_power, pch=NA_integer_, col="black", xlab="datetime", ylab="Global reactive power")
-lines(temp, data$Global_reactive_power)
-
+plot(temp, data$Global_reactive_power, type="l", col="black", xlab="datetime", ylab="Global reactive power")
 dev.off()
